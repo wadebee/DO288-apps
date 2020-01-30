@@ -1,0 +1,39 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/host.generated: "true"
+    creationTimestamp: "2020-01-30T17:22:11Z"
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: wadebee-quotes-dev
+    resourceVersion: "52092331"
+    selfLink: /apis/route.openshift.io/v1/namespaces/wadebee-quotes-dev/routes/quotesapi
+    uid: 0d35c390-4385-11ea-ac02-0a580a810036
+  spec:
+    host: quotesapi-wadebee-quotes-dev.apps.ocp-na2.prod.nextcle.com
+    port:
+      targetPort: 8080-tcp
+    subdomain: ""
+    to:
+      kind: Service
+      name: quotesapi
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2020-01-30T17:22:12Z"
+        status: "True"
+        type: Admitted
+      host: quotesapi-wadebee-quotes-dev.apps.ocp-na2.prod.nextcle.com
+      routerCanonicalHostname: apps.ocp-na2.prod.nextcle.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

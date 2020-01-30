@@ -1,0 +1,64 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-01-30T17:19:24Z"
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: wadebee-quotes-dev
+    resourceVersion: "52090499"
+    selfLink: /api/v1/namespaces/wadebee-quotes-dev/services/quotesapi
+    uid: a98e6e35-4384-11ea-afc7-12e66aea72fd
+  spec:
+    clusterIP: 172.30.40.94
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: 8443-tcp
+      port: 8443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      app: quotesapi
+      deploymentconfig: quotesapi
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-01-30T17:18:44Z"
+    labels:
+      app: quotesdb
+    name: quotesdb
+    namespace: wadebee-quotes-dev
+    resourceVersion: "52089912"
+    selfLink: /api/v1/namespaces/wadebee-quotes-dev/services/quotesdb
+    uid: 915e81cf-4384-11ea-9a14-0ec1322e3f6b
+  spec:
+    clusterIP: 172.30.176.246
+    ports:
+    - name: 3306-tcp
+      port: 3306
+      protocol: TCP
+      targetPort: 3306
+    selector:
+      app: quotesdb
+      deploymentconfig: quotesdb
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

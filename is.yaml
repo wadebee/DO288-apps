@@ -1,0 +1,72 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-01-30T17:19:24Z"
+    generation: 1
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: wadebee-quotes-dev
+    resourceVersion: "52092078"
+    selfLink: /apis/image.openshift.io/v1/namespaces/wadebee-quotes-dev/imagestreams/quotesapi
+    uid: a97acd38-4384-11ea-ac02-0a580a810036
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/wadebee-quotes-dev/quotesapi
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-na2.prod.nextcle.com/wadebee-quotes-dev/quotesapi
+    tags:
+    - items:
+      - created: "2020-01-30T17:21:48Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/wadebee-quotes-dev/quotesapi@sha256:0d78a52d9f0f6a95aaec4f12309dc341f4e83706148237a793f2318c3d0b9216
+        generation: 1
+        image: sha256:0d78a52d9f0f6a95aaec4f12309dc341f4e83706148237a793f2318c3d0b9216
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/image.dockerRepositoryCheck: "2020-01-30T17:18:44Z"
+    creationTimestamp: "2020-01-30T17:18:44Z"
+    generation: 2
+    name: quotesdb
+    namespace: wadebee-quotes-dev
+    resourceVersion: "52089916"
+    selfLink: /apis/image.openshift.io/v1/namespaces/wadebee-quotes-dev/imagestreams/quotesdb
+    uid: 914f9810-4384-11ea-8191-0a580a800036
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: image-registry.openshift-image-registry.svc:5000/openshift/mysql:5.7
+      generation: 2
+      importPolicy: {}
+      name: "5.7"
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/wadebee-quotes-dev/quotesdb
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-na2.prod.nextcle.com/wadebee-quotes-dev/quotesdb
+    tags:
+    - conditions:
+      - generation: 2
+        lastTransitionTime: "2020-01-30T17:18:44Z"
+        message: 'Internal error occurred: Get https://image-registry.openshift-image-registry.svc:5000/v2/:
+          x509: certificate signed by unknown authority'
+        reason: InternalError
+        status: "False"
+        type: ImportSuccess
+      items: null
+      tag: "5.7"
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
